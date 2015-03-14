@@ -24,19 +24,17 @@ $passwordLength = 10;
 //$customer_id = 10;
 //$customers = Mage::getModel('customer/customer')->getCollection()->addAttributeToFilter('entity_id', array('eq' => $customer_id));
 
-/****
+/*
   Resetar todos :
-****/
+*/
 
 $customers = Mage::getModel('customer/customer')->getCollection();
 
-/****
-  Now loop through the customers and create the passwords
-****/
+/*
+ Agora percorrer os clientes e criar as senhas
+*/
 foreach ($customers as $customer){
-    //[Update 2012-04-19: thanks Michael]
     $customer->load($customer->getId());
-    //[/Update 2012-04-19]
     $customer->setPassword($customer->generatePassword($passwordLength))->save();
 	$line_data = $customer->getEmail(). "\t". $customer->getPassword();
         $line[] = $line_data;
@@ -45,7 +43,7 @@ foreach ($customers as $customer){
 }
 $content = implode("\n", $line);
 
-// store all the passwords to a file:
+// armazenar todas as senhas em um arquivo:
 file_put_contents('./accounts.csv', $content);
 echo "COMPLETE!";
 ?>
