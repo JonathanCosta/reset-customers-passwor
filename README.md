@@ -5,6 +5,7 @@ http://marius-strajeru.blogspot.com.br/2009/11/how-to-reset-passwords-for-all.ht
 http://www.magentocommerce.com/boards/viewthread/67065/#t194128
 
 
+https://pag.ae/bmgfX5Y
 
 <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
 <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
